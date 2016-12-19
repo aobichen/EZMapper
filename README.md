@@ -3,6 +3,8 @@
 
 
 
+using EZMapper;
+
 #Model A
 ```ruby
 public class AModel{
@@ -43,7 +45,7 @@ public class BModel
 
   b.Age = 30;
   
-  var newModel = new AutoMapped().Mapper<AModel>(b);
+  var newModel = EZ.Mapper<AModel>(b);
  
 ```
 
@@ -64,5 +66,24 @@ public class BModel
 ```
 
 
-  
+
+#MapperList
+```ruby
+   var c = new List<BClass>();
+   c.Add(new BClass { Address = "aa", Age = 10, id = 1, Name = "Hello" });
+   c.Add(new BClass { Address = "cc", Age = 15, id = 2, Name = "World" }); 
+   var newModel = EZ.MapperList<AModel>(b);
  
+```
+
+#結果
+```ruby
+回傳 一個新的List
+```
+
+#Ignores
+```ruby
+   例外參數，排除不想進行轉換的參數，並以逗號隔開
+   var newModel = EZ.Mapper<AModel>(b,"ID,Name");
+ 
+```
