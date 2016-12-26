@@ -3,7 +3,7 @@
 
 
 
-using EZMapper;
+using AIEZ;
 
 #Model A
 ```ruby
@@ -45,7 +45,7 @@ public class BModel
 
   b.Age = 30;
   
-  var newModel = EZ.Mapper<AModel>(b);
+  var newModel = AutoMapper.Mapper<AModel>(b);
  
 ```
 
@@ -72,7 +72,7 @@ public class BModel
    var c = new List<BClass>();
    c.Add(new BClass { Address = "aa", Age = 10, id = 1, Name = "Hello" });
    c.Add(new BClass { Address = "cc", Age = 15, id = 2, Name = "World" }); 
-   var newModel = EZ.MapperList<AModel>(b);
+   var newModel = AutoMapper.MapperList<AModel>(b);
  
 ```
 
@@ -84,6 +84,6 @@ public class BModel
 #Ignores
 ```ruby
    ㄒ把计逼埃ぃ稱秈︽锣传把计硆腹筳秨
-   var newModel = EZ.Mapper<AModel>(b,"ID,Name");
+   var newModel = AutoMapper.Mapper<AModel>(b,"ID,Name");
  
 ```
